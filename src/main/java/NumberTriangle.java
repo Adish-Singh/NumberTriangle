@@ -90,8 +90,17 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        // TODO implement this method
-        return -1;
+        // implemented this method
+        NumberTriangle current = this;          // Starting with current node
+        for (char c : path.toCharArray()) {     // Getting an array of char
+            if (c == 'l') {
+                current = current.left;
+            }
+            else {
+                current = current.right;
+            }
+        }
+        return current.root;
     }
 
 
